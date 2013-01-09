@@ -77,6 +77,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self loadObjects]; // Refreshes the table
     [super viewWillAppear:animated];
 }
 

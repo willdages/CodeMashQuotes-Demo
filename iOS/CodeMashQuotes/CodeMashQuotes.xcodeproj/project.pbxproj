@@ -34,6 +34,7 @@
 		FCA7AB09169E05F900D4B2F2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA7AAFC169E05F900D4B2F2 /* Social.framework */; };
 		FCA7AB0A169E05F900D4B2F2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA7AAFD169E05F900D4B2F2 /* StoreKit.framework */; };
 		FCA7AB0B169E05F900D4B2F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA7AAFE169E05F900D4B2F2 /* SystemConfiguration.framework */; };
+		FCA7AB0E169E097100D4B2F2 /* CMQAddQuoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA7AB0D169E097100D4B2F2 /* CMQAddQuoteViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		FCA7AAFC169E05F900D4B2F2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FCA7AAFD169E05F900D4B2F2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FCA7AAFE169E05F900D4B2F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FCA7AB0C169E097100D4B2F2 /* CMQAddQuoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMQAddQuoteViewController.h; sourceTree = "<group>"; };
+		FCA7AB0D169E097100D4B2F2 /* CMQAddQuoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMQAddQuoteViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				FCA7AAD6169E044800D4B2F2 /* CMQAppDelegate.h */,
 				FCA7AAD7169E044800D4B2F2 /* CMQAppDelegate.m */,
 				FCA7AADF169E044800D4B2F2 /* MainStoryboard_iPhone.storyboard */,
+				FCA7AB0C169E097100D4B2F2 /* CMQAddQuoteViewController.h */,
+				FCA7AB0D169E097100D4B2F2 /* CMQAddQuoteViewController.m */,
 				FCA7AAE2169E044800D4B2F2 /* MainStoryboard_iPad.storyboard */,
 				FCA7AAE5169E044800D4B2F2 /* CMQMasterViewController.h */,
 				FCA7AAE6169E044800D4B2F2 /* CMQMasterViewController.m */,
@@ -243,6 +248,7 @@
 				FCA7AAD8169E044800D4B2F2 /* CMQAppDelegate.m in Sources */,
 				FCA7AAE7169E044800D4B2F2 /* CMQMasterViewController.m in Sources */,
 				FCA7AAEA169E044800D4B2F2 /* CMQDetailViewController.m in Sources */,
+				FCA7AB0E169E097100D4B2F2 /* CMQAddQuoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
