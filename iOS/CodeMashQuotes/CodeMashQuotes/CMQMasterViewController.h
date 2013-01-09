@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @class CMQDetailViewController;
 
-@interface CMQMasterViewController : UITableViewController
+@interface CMQMasterViewController : PFQueryTableViewController
 
 @property (strong, nonatomic) CMQDetailViewController *detailViewController;
 
