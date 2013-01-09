@@ -44,6 +44,8 @@ $(document).ready(function() {
     saveQuote();
   });
 
+  getQuotes();
+
 });
 
 function closeModal() {
@@ -70,7 +72,9 @@ function saveQuote() {
       // Called if save() was successful.
       // Returns the newly-created object (with
       // its id, createdAt and updatedAt properties)
-      console.log("Saved!");
+
+      // Since it's saved, refresh the list automatically
+      getQuotes();
       closeModal();
     },
     error: function(quote, error) {
@@ -79,6 +83,60 @@ function saveQuote() {
       // an error object w/ info
       console.log("Did you remember to fill in your Parse keys on line 107 in index.html?");
       console.log(error.message);
+      // Handle the error here
+    }
+  })
+}
+
+function getQuotes() {
+  // Quote (uppercase) represents the Quote class
+  var Quote = Parse.Object.extend("Quote");
+
+  // query is an instance of a PFQuery, created by
+  // passing in a class object to new Parse.Query()
+  var query = new Parse.Query(Quote);
+
+  // Sort whatever is returned by the key "createdAt"
+  // in the order 'descending' (newest first)
+  query.descending("createdAt");
+
+  // Return no more than 25 results
+  query.limit(25);
+
+  // Once we're satisfied with the constraints we put
+  // on our query, we call find(). (Play around with 
+  // adding more constraints).
+  query.find({
+    success: function(results) {
+      // The query was successful, and has passed
+      // back an array of PFObjects for you to use
+
+      // Since we're appending, clear the list out 
+      // every time we're about to add results
+      $("#quoteList").html("");
+
+      // Compile the Handlebars template we're going
+      // to stick the results into. Pass Handlebars the
+      // ID of the script tags in index.html that contain
+      // the template.
+      var template = Handlebars.compile($("#single-quote-template").html());
+
+      // Iterate over all the results
+      $(results).each(function(i,e) {
+        // Serialize the PFObject and store it in q
+        var q = e.toJSON();
+        // Select the DOM element we're appending to,
+        // Then append the template, passing in q to
+        // provide the values of the template variables
+        $("#quoteList").append(template(q));
+      });
+    },
+    error: function(error) {
+      if (error.message == "unauthorized") {
+        // Temporary message if you haven't added your own credentials for Parse.com yet. Remove once set up.
+        console.warn("Please fill in your own Parse.com App ID and Javascript Key on line 107 of index.html");
+      }
+      // Handle the error here
     }
   })
 }

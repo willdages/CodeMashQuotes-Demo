@@ -45,15 +45,6 @@
       <h2>Newest Quotes</h2>
       <hr />
       <div id="quoteList" class="row">
-
-        <!-- Feed Entry -->
-        <div class="row singleQuote">
-          <div class="eleven columns centered">
-            <p>"Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong." &mdash; <strong>Person</strong></p>
-          </div>
-        </div>
-        <hr />
-
       </div>
     </div>
     
@@ -95,10 +86,25 @@
 
 
   <!-- Single Quote Template -->
-
+  <!-- 
+      Transplanted from the #quoteList above, stick the HTML inside script 
+      tags with a type of "text/x-handlebars-template", and then add your 
+      key names inside of {{ }} and they will be replaced when you pass 
+      your data into the template in the query success()
+  -->
+  <script type="text/x-handlebars-template" id="single-quote-template">
+    <!-- Feed Entry -->
+    <div class="row singleQuote">
+      <div class="eleven columns centered">
+        <p>"{{quoteText}}" &mdash; <strong>{{by}}</strong></p>
+      </div>
+    </div>
+    <hr />
+  </script>
 
   <script src="javascripts/jquery.js"></script>
   <script src="javascripts/foundation.min.js"></script>
+  <script src="javascripts/handlebars.js"></script>
 
   <script src="http://www.parsecdn.com/js/parse-1.1.15.min.js"></script>
 
