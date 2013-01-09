@@ -37,3 +37,48 @@
 
 })(jQuery, this);
 
+$(document).ready(function() {
+
+  $("#newQuote").submit(function(e) {
+    e.preventDefault();
+    saveQuote();
+  });
+
+});
+
+function closeModal() {
+  // The popup is powered by the Reveal plugin
+  $("#add-quote").trigger("reveal:close");
+}
+
+function saveQuote() {
+  var quoteText = $("#quoteText").val();
+  var attribution = $("#attribution").val();
+
+  // Quote (uppercase) represents the Quote class
+  var Quote = Parse.Object.extend("Quote");
+
+  // quote (lowercase) is an instance of the Quote class
+  // that will show up as a row in the Data Browser
+  var quote = new Quote();
+
+  quote.set("quoteText", quoteText);
+  quote.set("by", attribution);
+
+  quote.save(null, {
+    success: function(quote) {
+      // Called if save() was successful.
+      // Returns the newly-created object (with
+      // its id, createdAt and updatedAt properties)
+      console.log("Saved!");
+      closeModal();
+    },
+    error: function(quote, error) {
+      // Called if there was a problem saving.
+      // Returns the object you tried to save and
+      // an error object w/ info
+      console.log("Did you remember to fill in your Parse keys on line 107 in index.html?");
+      console.log(error.message);
+    }
+  })
+}
