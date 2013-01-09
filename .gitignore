@@ -1,0 +1,6 @@
+sftp-config.json
+.DS_Store
+*.swp
+*.lock
+profile
+xcuserdata

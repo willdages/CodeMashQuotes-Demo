@@ -1,0 +1,5 @@
+/* Note: since this is the only CSS I used, I provided it inline in index.html's <head> */
+.singleQuote p {
+	padding: 0 10px;
+	margin: 0;
+}
