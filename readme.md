@@ -2,6 +2,8 @@
 
 Demo files for the "How to Build a Cloud App in an Afternoon with Parse" presentation at CodeMash 2.0.1.3
 
+These files are a more-heavily-commented version of the code that was written during the live demo -- a screencast of the demo is on YouTube here: http://www.youtube.com/watch?v=6ATktgoXu9s
+
 This demo consists of two applications, a web and iOS app that accept text submissions of quotes that people heard at CodeMash. By the end of the demo, we will have built:
 * A web interface that allows people to type in a quote, along with an attribution, and save that information to Parse.
 * A list of the 25 newest quotes, grabbed from Parse, sorted newest-to-oldest, and displayed on the main page.
